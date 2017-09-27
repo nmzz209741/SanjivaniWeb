@@ -1,0 +1,48 @@
+{% extends 'dashboard.html' %}
+{% block nav-back %}
+ <li>
+                            <a href="{{request.META.HTTP_REFERER}}">
+                                <i class="pe-7s-back"></i>
+                                &nbsp;Back
+                            </a>
+                        </li>
+{% endblock %}
+{% block bodycontent %}
+        <div class="content">
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Notifications</h4>
+                        <p class="category">Here are the list of items that require attention in stock!!!</p>
+
+                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-md-4">
+
+                               <a href="/account/notification/outofstock/"> <div class="alert alert-warning">
+                                     <span>Medicines that are likely Out Of Stock!</span>
+                                </div></a>
+                            </div>
+                            <div class="col-md-4">
+
+                               <a href="/account/notification/expiry/"> <div class="alert alert-danger">
+                                     <span>Medicines that are likely to Expire!</span>
+                                </div></a>
+                            </div>
+                            <div class="col-md-4">
+
+                               <a href="/"> <div class="alert alert-success">
+                                     <span>Back</span>
+                                </div></a>
+                            </div>
+                        </div>
+                        <br>
+
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

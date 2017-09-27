@@ -1,0 +1,92 @@
+{% extends 'dashboard.html' %}
+{% block head %}
+<title>Admin: View Staffs</title>
+{% endblock %}
+{% block d1 %}
+<li >
+                    <a href="/adminlogin/sales/">
+                        <i class="pe-7s-graph"></i>
+                        <p>View Sales</p>
+                    </a>
+                </li>
+{% endblock %}
+{% block d2 %}
+<li>
+                    <a href="/adminlogin/supervisor/">
+                        <i class="pe-7s-user"></i>
+                        <p>Supervisor Profile</p>
+                    </a>
+                </li>
+{% endblock %}
+{% block d3 %}
+<li  >
+    <a href="/adminlogin/Gotostore/">
+    <i class="pe-7s-note2"></i>
+    <p>Go to Store</p>
+    </a>
+    </li>
+
+
+{% endblock %}
+
+{% block d4 %}
+ <li class="active">
+                    <a href="/adminlogin/staff/">
+                        <i class="pe-7s-users"></i>
+                        <p>View Staffs</p>
+                    </a>
+                </li>
+
+{% endblock %}
+{% block d5 %}
+ <li>
+                    <a href="/account/notification/">
+                        <i class="pe-7s-bell"></i>
+                        <p>Notifications</p>
+                    </a>
+                </li>
+{% endblock %}
+{% block bodycontent %}
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Staff List</h4>
+                                <p class="category">A list of all the staffs</p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                               <table class="table table-hover table-striped">
+                                    <thead>
+                                        <th>FirstName</th>
+                                    	<th>LastName</th>
+                                    	<th>Address City</th>
+                                    	<th>Address District</th>
+                                    	<th>Salary</th>
+                                        <th>Gender</th>
+                                        <th>Sales Point</th>
+
+
+                                    </thead>
+                                    <tbody>
+                 {% for items in stf %} <tr>
+                     <td>{{ items.first_name }}</td>
+                                        	<td>{{ items.last_name }}</td>
+                                        	<td>{{ items.address_city }}</td>
+                                        	<td>{{ items.address_district }}</td>
+                                        	<td>{{ items.salary }}</td>
+                                            <td>{{ items.Gender }}</td>
+                                            <td> </td>
+                                        </tr>{% endfor %}
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+{% endblock %}

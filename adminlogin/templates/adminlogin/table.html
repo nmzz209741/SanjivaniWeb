@@ -1,0 +1,105 @@
+{% extends 'dashboard.html' %}
+{% block head %}
+<title>Admin: Go To Store</title>
+{% endblock %}
+{% block d1 %}
+<li >
+                    <a href="/adminlogin/sales/">
+                        <i class="pe-7s-graph"></i>
+                        <p>View Sales</p>
+                    </a>
+                </li>
+{% endblock %}
+{% block d2 %}
+<li>
+                    <a href="/adminlogin/supervisor/">
+                        <i class="pe-7s-user"></i>
+                        <p>Supervisor Profile</p>
+                    </a>
+                </li>
+{% endblock %}
+{% block d3 %}
+<li  class="active">
+    <a href="/adminlogin/Gotostore/">
+    <i class="pe-7s-note2"></i>
+    <p>Go to Store</p>
+    </a>
+    </li>
+
+
+{% endblock %}
+
+{% block d4 %}
+ <li>
+                    <a href="/adminlogin/staff/">
+                        <i class="pe-7s-users"></i>
+                        <p>View Staffs</p>
+                    </a>
+                </li>
+
+{% endblock %}
+{% block d5 %}
+ <li>
+                    <a href="/account/notification/">
+                        <i class="pe-7s-bell"></i>
+                        <p>Notifications</p>
+                    </a>
+                </li>
+{% endblock %}
+{% block bodycontent %}
+
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Medicines Table</h4>
+                                <p class="category">A list of all the medicines available in the stock</p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table class="table table-hover table-striped">
+                                    <thead>
+                                        <th>Itemscode</th>
+                                    	<th>Itemsname</th>
+                                    	<th>Category</th>
+                                    	<th>Expiry date</th>
+                                    	<th>Quantity Available</th>
+                                        <th>Costprice</th>
+                                        <th>Sellprice</th>
+                                    </thead>
+                                    <tbody>
+
+
+
+                                        <tr>
+{% for item in amt %}
+                                        	<td>{{ item.itemscode.itemscode }}</td>
+                                        	<td>{{ item.itemscode.itemsname }}</td>
+                                        	<td>{{ item.itemscode.categoryname }}</td>
+                                        	<td>{{ item.batchno.expdate }}</td>
+                                        	<td>{{ item.batchno.stock }}</td>
+                                            <td>{{ item.costprice }}</td>
+                                            <td>{{ item.sellprice }}</td>
+                                        </tr>
+
+{% endfor %}
+
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

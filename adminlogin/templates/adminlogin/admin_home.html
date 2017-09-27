@@ -1,0 +1,48 @@
+{% extends 'dashboard.html' %}
+
+{% block head %}
+<title>ADMIN HOMEPAGE</title>
+{% endblock %}
+{% block d1 %}
+<li class="active">
+                    <a href="/adminlogin/sales/">
+                        <i class="pe-7s-graph"></i>
+                        <p>View Sales</p>
+                    </a>
+                </li>
+{% endblock %}
+{% block d2 %}
+<li>
+                    <a href="/adminlogin/supervisor/">
+                        <i class="pe-7s-user"></i>
+                        <p>Supervisor Profile</p>
+                    </a>
+                </li>
+{% endblock %}
+{% block d3 %}
+<li><a href="/adminlogin/Gotostore/">
+    <i class="pe-7s-note2"></i>
+    <p>Go to Store</p>
+    </a>
+    </li>
+
+
+{% endblock %}
+
+{% block d4 %}
+ <li>
+                    <a href="/adminlogin/staff/">
+                        <i class="pe-7s-users"></i>
+                        <p>View Staffs</p>
+                    </a>
+                </li>
+
+{% endblock %}
+{% block d5 %}
+ <li>
+                    <a href="/account/notification/">
+                        <i class="pe-7s-bell"></i>
+                        <p>Notifications</p>
+                    </a>
+                </li>
+{% endblock %}

@@ -1,0 +1,216 @@
+{% extends 'dashboard.html' %}
+{% block head %}
+<style>
+p.clicker {
+    padding-left: 0.8cm;
+      padding-bottom: 0.18cm;
+}
+i.pe-7s-news-paper {
+    padding-left: 0.75cm;
+}
+div.options{
+    padding-left: 2.2cm;
+    color: white;
+}
+
+</style>
+{% load staticfiles %}
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$('.options').hide();
+    $('.clicker').on('click',function(){
+    $(this).next().slideToggle(400);
+    $(this).toggleClass('active');
+
+  });
+});
+</script>
+<title>Supervisor: Staff Profile</title>
+{% endblock %}
+{% block d1 %}
+<li >
+                    <a href="/supervisorlogin/sales/">
+                        <i class="pe-7s-graph"></i>
+                        <p>View Sales</p>
+                    </a>
+                </li>
+{% endblock %}
+{% block d2 %}
+
+<li class="active">
+     <a href="/supervisorlogin/staff/">
+                        <i class="pe-7s-user"></i>
+                        <p>Staff Profile</p>
+                    </a>
+                </li>
+{% endblock %}
+{% block d3 %}
+<li><a href="/supervisorlogin/store/">
+    <i class="pe-7s-note2"></i>
+    <p>Go to Store</p>
+    </a>
+    </li>
+
+
+{% endblock %}
+
+{% block d4 %}
+ <li>
+
+    <i class="pe-7s-news-paper"></i>
+     <p class="clicker">Update Stock</p>
+      <div class="options">
+     <a href="#"><div class="1">ADD NEW DRUG</div></a>
+     <a href="#"><div class="2">MODIFY EXISTING</div></a>
+     <a href="#"><div class="3">DELETE DRUG </div></a></div>
+</li>
+
+{% endblock %}
+{% block bodycontent %}
+        <div class="content">
+            <div class="container-fluid">
+                <!--<div class="row">-->
+                    <!--<div class="col-md-8">-->
+                        <!--<div class="card">-->
+                            <!--<div class="header">-->
+                                <!--<h4 class="title">Edit Profile</h4>-->
+                            <!--</div>-->
+                            <!--<div class="content">-->
+                                <!--<form>-->
+                                      <!--<div class="row">-->
+                                        <!--<div class="col-md-6">-->
+                                            <!--<div class="form-group">-->
+                                                <!--<label>First Name</label>-->
+                                                <!--<input type="text" class="form-control" placeholder="Company" value="{{ object.first_name }}" name="fn">-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-md-6">-->
+                                            <!--<div class="form-group">-->
+                                                <!--<label>Last Name</label>-->
+                                                <!--<input type="text" class="form-control" placeholder="Last Name" value="{{ object.last_name }}" name="ln">-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+                                    <!--<div class="row">-->
+                                        <!--<div class="col-md-6">-->
+                                            <!--<div class="form-group">-->
+                                                <!--<label>City</label>-->
+                                                <!--<input type="text" class="form-control" placeholder="City" value="{{ object.address_city }}" name="ac">-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-md-6">-->
+                                            <!--<div class="form-group">-->
+                                                <!--<label>District</label>-->
+                                                <!--<input type="text" class="form-control" placeholder="District" value="{{ object.address_district }}" name="ad">-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+
+                                    <!--</div>-->
+
+                                    <!--<div class="row">-->
+                                        <!--<div class="col-md-6">-->
+                                            <!--<div class="form-group">-->
+                                                <!--<label>Gender</label>-->
+                                                <!--<br>-->
+                                                <!--&nbsp;<select class="col-md-6" ="{{ items.Gender }}" name="gn" ng-model="'{{ object.Gender }}'">-->
+                                                  <!--<option value="Male">Male</option>-->
+                                                  <!--<option value="Female">Female</option>-->
+                                                <!--</select>-->
+                                                                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-md-6">-->
+                                            <!--<div class="form-group">-->
+                                                <!--<label>Salary</label>-->
+                                                <!--<input type="text" class="form-control" placeholder="Salary" value="{{ object.salary }}" name="sal">-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+
+                                    <!--</div>-->
+
+                                    <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+<!--&lt;!&ndash;{% for val in username_stf %}&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<div class="col-md-4">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<label>Username</label>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<input type="text" class="form-control" placeholder="Username" value="{{ val.username }}" name="un">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;{% endfor %}&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<div class="col-md-4">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<label>Password</label>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<input type="password" class="form-control " placeholder="********" name="ps">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<div class="col-md-4">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<label>Confirm Password</label>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<input type="password" class="form-control" placeholder="********" name="ps1">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+                                    <!--<div class="row">-->
+                                        <!--<div class="col-md-12">-->
+                                            <!--<div class="form-group">-->
+                                                <!--<label>About Me</label>-->
+                                                <!--<textarea rows="5" class="form-control" placeholder="Here can be your description" value="Mike"></textarea>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+                                    <!--<button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>-->
+                                    <!--<div class="clearfix"></div>-->
+                                <!--</form>-->
+
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="col-md-4">
+                        <div class="card card-user">
+                            <div class="image">
+                                <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>
+                            </div>
+                            <div class="content">
+                                <div class="author">
+                                     <a href="#">
+
+
+                                    <img class="avatar border-gray" src="http://megaicons.net/static/img/icons_sizes/8/178/256/users-checked-user-icon.png" alt="..."/>
+
+                                         <h2><strong>{{ object.first_name }} {{ object.last_name }}</strong></h2>
+                                </div>
+                                <p class="description text-center">  {{ object.address_city }},
+                                                    {{ object.address_district }} <br>
+                                         {{ object.salary }} <br>
+                                    {{ object.role_id.type }} <br>
+                                    {{ object.Gender }} <br>
+                                     {{ object.Joined_date }} <br>
+
+
+                            </div>
+                            <hr>
+                            <div class="text-center">
+                                <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
+                                <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
+                                <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+<a href="{% url 'update' object.pk %}">
+
+                        <button class="btn btn-default">Update Profile</button>
+<!--</a>-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    {% endblock  %}
+

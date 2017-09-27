@@ -1,0 +1,18 @@
+body{
+    background-color:#eee;
+    text-align: center;
+}
+.jumbotron{
+    background-color:#a080cb;
+    color:#eee;
+}
+
+.form{
+	body{padding-top:10px;}
+	background-color:#eee;
+}
+.panel-title{
+	background-color: #3d3c38
+	color:#eee;
+}
+

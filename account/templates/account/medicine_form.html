@@ -1,0 +1,27 @@
+{% extends 'super_home.html' %}
+{% block bodycontent %}
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Create New Drug Profile</h4>
+                            </div>
+                            <div class="content">
+                                <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {% include 'supervisorlogin/form-template.html' %}
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-success">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock  %}

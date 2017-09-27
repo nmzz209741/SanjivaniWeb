@@ -1,0 +1,54 @@
+
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+
+    <title>Login</title>
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'account/forms.css' %}" type="text/css">
+    {% load crispy_forms_tags %}
+    {% load widget_tweaks %}
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1><bold>Welcome to Sanjivani</bold></h1><br>
+            <h1><bold>Pharmacy Management System</bold></h1><br>
+        </div>
+        <h2>Please provide your login credentials to access into the system.</h2>
+        <br>
+        <div class="form">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading" ">
+                    <h1 class="panel-title"></h1>
+                    <br>
+                    <h1>{{title}}</h1>
+                </div>
+                <div class="panel-body">
+                    <form method="post" action="" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <input type="submit" class="btn btn-lg btn-success btn-block"  value="Login">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+</body>
+
+
+
