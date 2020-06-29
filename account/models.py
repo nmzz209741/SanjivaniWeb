@@ -2,7 +2,7 @@ from django.db import models
 from django.shortcuts import render
 from django.core.exceptions import ValidationError
 from django.core.validators import RegexValidator
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 import re
 class employeeCategory(models.Model):
     HEIRARCHY=(
@@ -73,7 +73,7 @@ class medicine(models.Model):
         return self.itemscode+" "+self.itemsname+" "+self.categoryname+" "+self.locationname+" "+str(self.reorderlimit)+" "+str(self.maxlimit)
 
 class batchdata(models.Model):
-    batchno=models.IntegerField(primary_key=True)
+    batchno=models.DateField(primary_key=True)
     itemscode_id=models.ForeignKey(medicine,on_delete=models.CASCADE)
     expdate= models.CharField(
         max_length=8,default='2017/09',

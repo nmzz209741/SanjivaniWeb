@@ -10,13 +10,13 @@ from dateutil.relativedelta import relativedelta
 from django.db.models import F
 def check_session(request):
     print("in check_session")
-    if request.session['employeeCategory'] == "admin":
+    if request.session['employeeCategory'] == "Admin":
         print('in admin')
         return render(request, 'adminlogin/admin_home.html', context=None)
-    elif request.session['employeeCategory'] == "supervisor":
+    elif request.session['employeeCategory'] == "Supervisor":
         print("in supervisor")
         return render(request, 'super_home.html', context=None)
-    elif request.session['employeeCategory'] == "staff":
+    elif request.session['employeeCategory'] == "Staff":
         return render(request, 'staff_home.html', context=None)
     else:
         print('Error in user profile')

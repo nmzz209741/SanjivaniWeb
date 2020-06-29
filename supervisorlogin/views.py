@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,HttpResponse
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 from django.views.generic import ListView,TemplateView,DetailView
 from account.forms import employee_form,user_add_form,medicine_form,batchdata_form,amount_form
 from account.models import medicine,batchdata,amount,employee,employeeCategory,user
